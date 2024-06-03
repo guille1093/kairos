@@ -22,7 +22,7 @@
 	];
 </script>
 
-<Card title="Language &amp; Time">
+<Card class="dark:bg-black dark:border-primary-600" title="Language &amp; Time">
 	<div class="space-y-4">
 		<Label class="space-y-2">
 			<span>Select language</span>

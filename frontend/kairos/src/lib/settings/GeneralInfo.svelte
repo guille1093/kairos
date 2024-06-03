@@ -18,12 +18,12 @@
 	];
 </script>
 
-<Card title="General Information" class="-mt-px max-w-none">
+<Card title="General Information" class="-mt-px max-w-none dark:bg-black dark:border-primary-600" >
 	<form class="grid grid-cols-6 gap-6">
 		{#each inputs as { label, type, placeholder }}
 			<Label class="col-span-6 space-y-2 sm:col-span-3">
 				<span>{label}</span>
-				<Input {type} {placeholder} class="border font-normal outline-none" />
+				<Input {type} {placeholder} class="border dark:bg-black dark:border-primary-600 font-normal outline-none" />
 			</Label>
 		{/each}
 		<Button class="w-fit whitespace-nowrap">Save all</Button>

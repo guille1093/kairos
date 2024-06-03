@@ -44,10 +44,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"clsx": "^2.1.1",
+		"@flaticon/flaticon-uicons": "^3.2.1",
 		"dayjs": "^1.11.11",
 		"svelte-meta-tags": "^3.1.2",
-		"tailwind-merge": "^2.3.0",
-		"tailwind-variants": "^0.2.1"
+		"tailwind-merge": "^2.3.0"
 	}
 }

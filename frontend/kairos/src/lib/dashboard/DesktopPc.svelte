@@ -7,7 +7,7 @@
 	import Change from './Change.svelte';
 </script>
 
-<Card size="xl" class="h-fit">
+<Card size="xl" class="h-fit dark:bg-black dark:border-primary-600">
 	<div
 		class="items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-700 sm:flex"
 	>

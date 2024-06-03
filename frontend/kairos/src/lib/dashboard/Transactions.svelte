@@ -46,7 +46,7 @@
 	];
 </script>
 
-<Card size="xl" class="shadow-sm max-w-none">
+<Card size="xl" class="shadow-sm max-w-none dark:bg-black dark:border-primary-600">
 	<div class="items-center justify-between lg:flex">
 		<div class="mb-4 mt-px lg:mb-0">
 			<Heading tag="h3" class="-ml-0.25 mb-2 text-xl font-semibold dark:text-white">
@@ -70,10 +70,10 @@
 				</Dropdown>
 			</div>
 			<div class="flex items-center space-x-4">
-				<Input placeholder="From" class="w-full">
+				<Input placeholder="Desde" class="w-full dark:bg-black dark:border-primary-600">
 					<CalendarMonthOutline slot="left" size="md" />
 				</Input>
-				<Input placeholder="To" class="w-full">
+				<Input placeholder="Hasta" class="w-full dark:bg-black dark:border-primary-600">
 					<CalendarMonthOutline slot="left" size="md" />
 				</Input>
 			</div>
@@ -82,17 +82,16 @@
 	<Table
 		hoverable={true}
 		noborder
-		striped
-		class="mt-6 min-w-full divide-y divide-gray-200 dark:divide-gray-600"
+		class="mt-6 min-w-full divide-y divide-gray-200 dark:divide-gray-600 dark:bg-black dark:border-primary-600"
 	>
-		<TableHead class="bg-gray-50 dark:bg-gray-700">
+		<TableHead class="bg-gray-50 dark:bg-neutral-900 dark:border-primary-600">
 			{#each headers as header}
 				<TableHeadCell class="whitespace-nowrap p-4 font-normal">{header}</TableHeadCell>
 			{/each}
 		</TableHead>
 		<TableBody>
 			{#each data as [name, date, amount, reference, method, status]}
-				<TableBodyRow>
+				<TableBodyRow class="dark:bg-black dark:border-primary-600">
 					<TableBodyCell class="px-4 font-normal">{name}</TableBodyCell>
 					<TableBodyCell class="px-4 font-normal text-gray-500 dark:text-gray-400">
 						{date}

@@ -24,17 +24,8 @@
 <MetaTag {path} {description} {title} {subtitle} />
 
 <main class="p-4">
-	<div class="grid grid-cols-1 space-y-2 dark:bg-gray-900 xl:grid-cols-3 xl:gap-3.5">
+	<div class="grid grid-cols-1 space-y-2 dark:bg-black xl:grid-cols-3 xl:gap-3.5">
 		<div class="col-span-full xl:mb-0">
-			<Breadcrumb class="mb-6">
-				<BreadcrumbItem home>Home</BreadcrumbItem>
-				<BreadcrumbItem
-					class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"
-					href="/curd/users">Users</BreadcrumbItem
-				>
-				<BreadcrumbItem>Settings</BreadcrumbItem>
-			</Breadcrumb>
-
 			<Heading tag="h1" class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
 				User settings
 			</Heading>

@@ -34,7 +34,7 @@
 	let iconClass =
 		'flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white';
 	let itemClass =
-		'flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700';
+		'flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-neutral-200 dark:hover:bg-zinc-950';
 	let groupClass = 'pt-2 space-y-2';
 
 	$: mainSidebarUrl = $page.url.pathname;
@@ -49,53 +49,39 @@
 	});
 
 	let posts = [
-		{ name: 'Dashboard', icon: ChartPieOutline, href: '/dashboard' },
+		{ name: 'Inicio', icon: 'fi fi-rs-house-blank', href: '/dashboard' },
+		{ name: 'Proyectos', icon: 'fi fi-rs-blueprint', href: '/projects' },
+		{ name: 'Tareas', icon: 'fi fi-rs-list-check', href: '/tasks' },
+		{ name: 'Tiempos', icon: 'fi fi-rs-stopwatch', href: '/time' },
+		{ name: 'Rendimientos', icon: 'fi fi-rs-coin', href: '/budgets' },
+		{ name: 'Calendario', icon: 'fi fi-rs-calendar', href: '/calendar' },
+		{ name: 'Notas', icon: 'fi fi-rs-note', href: '/notes' },
+		{ name: 'Ajustes', icon: 'fi fi-rs-settings-sliders', href: '/settings' },
 		{
-			name: 'Layouts',
-			icon: TableColumnSolid,
+			name: 'dev',
+			icon: 'fi fi-rs-terminal',
 			children: {
-				Stacked: '/layouts/stacked',
-				Sidebar: '/layouts/sidebar'
-			}
-		},
-		{
-			name: 'CRUD',
-			icon: RectangleListSolid,
-			children: {
-				Products: '/crud/products',
-				Users: '/crud/users'
-			}
-		},
-		{ name: 'Settings', icon: CogOutline, href: '/settings' },
-		{
-			name: 'Pages',
-			icon: FileChartBarSolid,
-			children: {
-				Pricing: '/pages/pricing',
-				Maintenance: '/errors/400',
+				'Stacked Layout': '/layouts/stacked',
+				'Sidebar Layout': '/layouts/sidebar',
+				'Products CRUD': '/crud/products',
+				'Users CRUD': '/crud/users',
+				'Pricing': '/pages/pricing',
+				'Maintenance': '/errors/400',
 				'404 not found': '/errors/404',
-				'500 server error': '/errors/500'
-			}
-		},
-		{
-			name: 'Authenication',
-			icon: LockSolid,
-			children: {
+				'500 server error': '/errors/500',
 				'Sign in': '/authentication/sign-in',
 				'Sign up': '/authentication/sign-up',
 				'Forgot password': '/authentication/forgot-password',
 				'Reset password': '/authentication/reset-password',
-				'Profile lock': '/authentication/profile-lock'
+				'Profile lock': '/authentication/profile-lock',
+				'Stacked': '/playground/stacked',
+				'Sidebar': '/playground/sidebar',
 			}
 		},
-		{
-			name: 'Playground',
-			icon: WandMagicSparklesOutline,
-			children: {
-				Stacked: '/playground/stacked',
-				Sidebar: '/playground/sidebar'
-			}
-		}
+	
+		
+		
+
 	];
 
 	let links = [
@@ -126,21 +112,23 @@
 <Sidebar
 	class={drawerHidden ? 'hidden' : ''}
 	activeUrl={mainSidebarUrl}
-	activeClass="bg-gray-100 dark:bg-gray-700"
-	asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-16 lg:block"
+	activeClass="bg-gray-100 dark:bg-black dark:border-[1.5px] dark:border-primary-600 dark:hover:bg-neutral-950 dark:hover:border-primary-800"
+	asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:h-auto lg:overflow-y-visible lg:pt-16 lg:block"
 >
 	<h4 class="sr-only">Main menu</h4>
 	<SidebarWrapper
-		divClass="overflow-y-auto px-3 pt-20 lg:pt-5 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] lg:block dark:bg-gray-800 lg:me-0 lg:sticky top-2"
+		divClass="overflow-y-auto px-3 pt-20 lg:pt-5 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] lg:block dark:bg-black lg:me-0 lg:sticky top-2"
 	>
 		<nav class="divide-y divide-gray-200 dark:divide-gray-700">
 			<SidebarGroup ulClass={groupClass} class="mb-3">
 				{#each posts as { name, icon, children, href } (name)}
 					{#if children}
 						<SidebarDropdownWrapper bind:isOpen={dropdowns[name]} label={name} class="pr-3">
+								<svelte:fragment slot="icon">
+          <i class={icon}></i>
+        </svelte:fragment>
 							<AngleDownOutline slot="arrowdown" strokeWidth="3.3" size="sm" />
 							<AngleUpOutline slot="arrowup" strokeWidth="3.3" size="sm" />
-							<svelte:component this={icon} slot="icon" class={iconClass} />
 
 							{#each Object.entries(children) as [title, href]}
 								<SidebarItem
@@ -153,6 +141,7 @@
 							{/each}
 						</SidebarDropdownWrapper>
 					{:else}
+					
 						<SidebarItem
 							label={name}
 							{href}
@@ -160,23 +149,11 @@
 							class={itemClass}
 							active={activeMainSidebar === href}
 						>
-							<svelte:component this={icon} slot="icon" class={iconClass} />
+		<svelte:fragment slot="icon">
+          <i class={icon}></i>
+        </svelte:fragment>
 						</SidebarItem>
 					{/if}
-				{/each}
-			</SidebarGroup>
-			<SidebarGroup ulClass={groupClass}>
-				{#each links as { label, href, icon } (label)}
-					<SidebarItem
-						{label}
-						{href}
-						spanClass="ml-3"
-						class={itemClass}
-						active={activeMainSidebar === href}
-						target="_blank"
-					>
-						<svelte:component this={icon} slot="icon" class={iconClass} />
-					</SidebarItem>
 				{/each}
 			</SidebarGroup>
 		</nav>

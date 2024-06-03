@@ -40,12 +40,12 @@
 
 <div class="mt-px space-y-4">
 	<div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-		<ChartWidget {chartOptions} title="$45,385" subtitle="Sales this week" />
+		<ChartWidget {chartOptions} title="14:40" subtitle="Esta semana" />
 
 		<Stats />
 	</div>
 	<div class="grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-		<Card horizontal class="items-center justify-between" size="xl">
+		<Card horizontal class="items-center justify-between dark:bg-black dark:border-primary-600" size="xl">
 			<div class="w-full">
 				<p>New products</p>
 				<p class="text-2xl font-bold leading-none text-gray-900 dark:text-white sm:text-3xl">
@@ -55,7 +55,7 @@
 			</div>
 			<Chart options={thickbars} class="w-full" />
 		</Card>
-		<Card horizontal class="items-center justify-between" size="xl">
+		<Card horizontal class=" dark:bg-black dark:border-primary-600 items-center justify-between" size="xl">
 			<div class="w-full">
 				<p>Users</p>
 				<p class="text-2xl font-bold leading-none text-gray-900 dark:text-white sm:text-3xl">
@@ -65,7 +65,7 @@
 			</div>
 			<DarkChart configFunc={users} class="w-full" />
 		</Card>
-		<Card horizontal class="items-center justify-between" size="xl">
+		<Card horizontal class=" dark:bg-black dark:border-primary-600 items-center justify-between" size="xl">
 			<div class="w-full">
 				<p>Users</p>
 				<p class="text-2xl font-bold leading-none text-gray-900 dark:text-white sm:text-3xl">

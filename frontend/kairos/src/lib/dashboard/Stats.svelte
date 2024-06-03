@@ -48,7 +48,7 @@
 	const customers = Customers.slice(0, 5);
 </script>
 
-<Card size="xl">
+<Card size="xl" class="dark:bg-black dark:border-primary-600">
 	<div class="mb-4 flex items-center gap-2">
 		<Heading tag="h3" class="w-fit text-lg font-semibold dark:text-white">
 			Statistics this month
@@ -75,7 +75,7 @@
 	>
 		<TabItem class="w-full" open>
 			<span slot="title">Top products</span>
-			<ul class="-m-3 divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-800">
+			<ul class="-m-3 divide-y divide-gray-200 dark:divide-gray-700">
 				{#each products as { src, image, label, price, change }}
 					<li class="py-3 sm:py-4">
 						<div class="flex items-center justify-between">
@@ -102,9 +102,9 @@
 				{/each}
 			</ul>
 		</TabItem>
-		<TabItem class="w-full">
+		<TabItem class="w-full dark:bg-black dark:border-primary-600">
 			<span slot="title">Top customers</span>
-			<ul class="-m-3 divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800">
+			<ul class="-m-3 divide-y divide-gray-200 bg-white dark:divide-gray-700">
 				{#each customers as { email, name, avatar }}
 					<li class="py-3 sm:py-3.5">
 						<div class="flex items-center justify-between">

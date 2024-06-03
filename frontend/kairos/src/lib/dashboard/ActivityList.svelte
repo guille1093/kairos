@@ -3,7 +3,7 @@
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Card size="xl">
+<Card size="xl" class="dark:bg-black dark:border-primary-600">
 	<div class="mb-4 flex items-center justify-between">
 		<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Latest Activity</h3>
 		<a

@@ -26,7 +26,7 @@
 	};
 </script>
 
-<Card size="xl">
+<Card size="xl" class="dark:bg-black dark:border-primary-600">
 	<Carousel images={items} let:Controls class="flex h-full">
 		<div slot="slide" let:index>
 			{#if index == 0}

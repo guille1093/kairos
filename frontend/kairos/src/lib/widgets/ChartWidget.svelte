@@ -10,7 +10,10 @@
 	export let chartOptions: ApexOptions;
 </script>
 
-<Card size="xl" class="w-full max-w-none 2xl:col-span-2">
+<Card size="xl" class="w-full max-w-none 2xl:col-span-2 dark:bg-black dark:border-primary-600">
+					<div class="mb-4 flex items-center gap-2 text-lg font-medium text-primary-600">
+						<i class="fi fi-rs-time-check"></i><span>Horas trabajadas</span>
+					</div>
 	<div class="mb-4 flex items-center justify-between">
 		<div class="flex-shrink-0">
 			<Heading tag="h3" class="text-2xl">{title}</Heading>
@@ -20,12 +23,6 @@
 	</div>
 
 	<Chart options={chartOptions}></Chart>
-	<div
-		class="mt-4 flex items-center justify-between border-t border-gray-200 pt-3 dark:border-gray-700 sm:pt-6"
-	>
-		<LastRange />
-		<More title="Sales Report" href="#top" />
-	</div>
 </Card>
 
 <!--

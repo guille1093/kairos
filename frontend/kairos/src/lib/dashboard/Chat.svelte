@@ -13,7 +13,7 @@
 	import Message from './Message.svelte';
 </script>
 
-<Card size="xl">
+<Card size="xl" class="dark:bg-black dark:border-primary-600">
 	<div class="mb-4 flex items-center justify-between">
 		<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Smart chat</h3>
 		<a

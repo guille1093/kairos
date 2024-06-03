@@ -8,7 +8,7 @@
 	export let dark: boolean = false;
 </script>
 
-<Card size="xl" class="h-fit">
+<Card size="xl" class="h-fit dark:bg-black dark:border-primary-600">
 	<div
 		class="mb-4 items-center justify-between border-b border-gray-200 pb-4 dark:border-gray-700 sm:flex"
 	>

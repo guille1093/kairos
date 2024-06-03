@@ -31,6 +31,7 @@
 	subtitle="You can set up Themesberg to get notifications"
 	{items}
 	let:item
+	class="dark:bg-black dark:border-primary-600"
 >
 	<div class="flex items-center justify-between">
 		<div class="flex flex-grow flex-col">

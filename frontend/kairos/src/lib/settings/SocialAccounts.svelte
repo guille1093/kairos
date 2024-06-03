@@ -11,7 +11,7 @@
 	];
 </script>
 
-<Card title="Social accounts">
+<Card title="Social accounts" class="dark:bg-black dark:border-primary-600">
 	<ul class="divide-y divide-gray-200 dark:divide-gray-700">
 		{#each items as { icon, name, link }}
 			<li class="py-4">

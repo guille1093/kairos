@@ -13,8 +13,8 @@
 	import Notification from './Notification.svelte';
 </script>
 
-<ToolbarButton size="lg" class="-mx-0.5 hover:text-gray-900 dark:hover:text-white">
-	<BellSolid size="lg" />
+<ToolbarButton size="lg" class="-mx-0.5 hover:text-gray-900 dark:hover:text-white dark:hover:bg-black">
+<i class="fi fi-rr-cowbell text-xl"></i>
 </ToolbarButton>
 <Popover class="max-w-sm border-0" trigger="click" defaultClass="p-0" arrow={false} offset={10}>
 	<div slot="title" class="rounded text-center">Notifications</div>

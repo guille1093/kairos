@@ -27,6 +27,7 @@
 </script>
 
 <CardList
+class="dark:bg-black dark:border-primary-600"
 	title="Email Notifications"
 	subtitle="You can set up Themesberg to get email notifications "
 	{items}

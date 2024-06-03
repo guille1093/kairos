@@ -22,22 +22,17 @@
 	export let list = false;
 </script>
 
-<Navbar {fluid} class="text-black" color="default" let:NavContainer>
-	<NavContainer class="mb-px mt-px px-1" {fluid}>
+<Navbar {fluid} class="text-black dark:bg-black" let:NavContainer>
+	<NavContainer class="" {fluid}>
 		<NavHamburger
 			onClick={() => (drawerHidden = !drawerHidden)}
 			class="m-0 me-3 md:block lg:hidden"
 		/>
 		<NavBrand href="/" class={list ? 'w-40' : 'lg:w-60'}>
-			<img
-				src="/images/flowbite-svelte-icon-logo.svg"
-				class="me-2.5 h-6 sm:h-8"
-				alt="Flowbite Logo"
-			/>
 			<span
-				class="ml-px self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
+				class="ml-px self-center  whitespace-nowrap text-xl font-thin dark:text-primary-600 uppercase sm:text-2xl"
 			>
-				Flowbite
+				Kairós
 			</span>
 		</NavBrand>
 		<div class="hidden lg:block lg:ps-3">
@@ -59,7 +54,7 @@
 				</NavUl>
 			{:else}
 				<form>
-					<Search size="md" class="mt-1 w-96 border focus:outline-none" />
+					<Search placeholder="Buscar" size="md" class="mt-1 w-96 dark:bg-black focus:outline-none" />
 				</form>
 			{/if}
 		</div>
