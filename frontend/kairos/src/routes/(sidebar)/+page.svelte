@@ -5,8 +5,8 @@
 	export let data: PageData;
 
 	const path: string = '';
-  const description: string = 'Admin Dashboard example using Flowbite Svelte';
-  const title: string = 'Flowbite Svelte Admin Dashboard - Home';
+  const description: string = 'KAIROS';
+  const title: string = 'KAIROS';
   const subtitle: string = 'Admin Dashboard';
 </script>
 

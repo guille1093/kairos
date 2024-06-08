@@ -4,7 +4,6 @@
 	import { Card, Chart } from 'flowbite-svelte';
 	import type { PageData } from '../../routes/(sidebar)/$types';
 	import Stats from './Stats.svelte';
-
 	import users from '$lib/graphs/users';
 	import DarkChart from '$lib/widgets/DarkChart.svelte';
 	import { onMount } from 'svelte';
@@ -21,6 +20,44 @@
 
 	let chartOptions = chart_options_func(false);
 	chartOptions.series = data.series;
+	console.log(chartOptions);
+
+	let currentWeekDaysWithDate = [];
+	const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+	const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+	const currentDate = new Date();
+	for (let i = 0; i < 7; i++) {
+		const day = currentDate.getDate() + i;
+		const month = currentDate.getMonth();
+		const dayWithDate = `${days[(currentDate.getDay() + i) % 7]} ${day} ${months[month]}`;
+		currentWeekDaysWithDate.push(dayWithDate);
+	}
+
+    chartOptions.xaxis.categories = currentWeekDaysWithDate;
+
+	chartOptions.series[0].name = 'Esta semana';
+	chartOptions.series[1].name = 'Semana pasada';
+	console.log(chartOptions.series[0].data[0]);
+	chartOptions.series[0].data[0] = 4;
+	chartOptions.series[0].data[1] = 5;
+	chartOptions.series[0].data[2] = 8;
+	chartOptions.series[0].data[3] = 3;
+	chartOptions.series[0].data[4] = 6;
+	chartOptions.series[0].data[5] = 6;
+	chartOptions.series[0].data[6] = 7;
+	chartOptions.series[0].data[7] = 5;
+
+	chartOptions.series[1].data[0] = 7;
+	chartOptions.series[1].data[1] = 4;
+	chartOptions.series[1].data[2] = 8;
+	chartOptions.series[1].data[3] = 8;
+	chartOptions.series[1].data[4] = 5;
+	chartOptions.series[1].data[5] = 6;
+	chartOptions.series[1].data[6] = 6;
+	chartOptions.series[1].data[7] = 8;
+
+
+
 
 	let dark = false;
 
@@ -41,7 +78,6 @@
 <div class="mt-px space-y-4">
 	<div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
 		<ChartWidget {chartOptions} title="14:40" subtitle="Esta semana" />
-
 		<Stats />
 	</div>
 	<div class="grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:grid-cols-3">

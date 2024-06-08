@@ -49,6 +49,9 @@
 </script>
 
 <Card size="xl" class="dark:bg-black dark:border-primary-600">
+					<div class="mb-4 flex items-center gap-2 text-lg font-medium text-primary-600">
+						<i class="fi fi-rs-calendar"></i><span>Este mes</span>
+					</div>
 	<div class="mb-4 flex items-center gap-2">
 		<Heading tag="h3" class="w-fit text-lg font-semibold dark:text-white">
 			Statistics this month

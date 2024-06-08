@@ -8,7 +8,7 @@
 		src: imagesPath('illustrations/maintenance.svg'),
 		alt: 'maintenance'
 	};
-	export let btnTitle = 'Go back home';
+	export let btnTitle = 'Volver al inicio';
 	export let btnHref = '/';
 	export let mainClass = 'bg-gray-50 dark:bg-gray-900';
 	export let mainDivClass =

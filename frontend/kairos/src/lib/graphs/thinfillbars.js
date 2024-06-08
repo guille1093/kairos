@@ -11,11 +11,11 @@ const signupsChartColors = {
 export default {
 	series: [
 		{
-			name: 'Users',
+			name: 'Usuarios',
 			data: [1334, 2435, 1753, 1328, 1155, 1632, 1336]
 		}
 	],
-	labels: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
+	labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
 	chart: {
 		type: 'bar',
 		height: '140px',
@@ -36,7 +36,7 @@ export default {
 			columnWidth: '25%',
 			borderRadius: 3,
 			colors: {
-				backgroundBarColors: signupsChartColors.backgroundBarColors,
+				backgroundBarColors: ['#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB'],
 				backgroundBarRadius: 3
 			}
 		}

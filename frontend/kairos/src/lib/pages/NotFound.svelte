@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { imagesPath } from '$lib/variables';
 	import { Button, P } from 'flowbite-svelte';
-	export let title = 'Page not found';
+	export let title = 'Página no encontrada';
 	export let description =
-		'Oops! Looks like you followed a bad link. If you think this is a problem with us, please	tell us.';
+		'Upps! Parece que has seguido un enlace incorrecto. Si crees que esto es un problema con nosotros, por favor, háznoslo saber.';
 	export let image = {
 		src: imagesPath('404.svg', 'illustrations'),
 		alt: 'astronaut'
 	};
-	export let btnTitle = 'Go back home';
+	export let btnTitle = 'Volver al inicio';
 	export let btnHref = '/';
 	export let mainClass = 'bg-gray-50 dark:bg-gray-900';
 	export let mainDivClass =
