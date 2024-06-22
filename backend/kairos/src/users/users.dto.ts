@@ -171,11 +171,6 @@ export class CreateUserDTO {
 
   @ApiProperty({ required: false })
   @IsOptional()
-  @IsString()
-  subcategories?: string;
-
-  @ApiProperty({ required: false })
-  @IsOptional()
   availability?: {};
 
   @ApiProperty({ required: false })
@@ -238,12 +233,6 @@ export class SearchUserDTO {
   @IsOptional()
   @IsString()
   category?: string;
-
-
-  @ApiProperty({ required: false })
-  @IsOptional()
-  @IsString()
-  subcategories?: string;
 }
 
 export class SearchUserPaginationDTO {
@@ -338,19 +327,8 @@ export class SearchUserPaginationDTO {
   @IsString()
   category?: string;
 
-  @ApiProperty({ required: false })
-  @IsOptional()
-  @IsString()
-  subcategories?: string;
-
   @ApiProperty({ required: false, type: 'string', default: '' })
   @IsOptional()
   @IsString()
   categoryID?: string;
-
-  @ApiProperty({ required: false })
-  @IsOptional()
-  @IsString()
-  subcategoriesID?: string;
-
 }

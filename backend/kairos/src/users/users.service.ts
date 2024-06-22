@@ -84,7 +84,7 @@ export class UsersService extends DefaultService {
             password: false
           }
         },
-        relations: ['role', 'createdBy', 'updatedBy', 'deletedBy', 'category', 'paymentMethod', 'subcategories', 'subcategories.category'],
+        relations: ['role', 'createdBy', 'updatedBy', 'deletedBy', 'category', 'paymentMethod'],
         where: {
           guid: params.query.guid || undefined,
           username: params.query.username || undefined,
@@ -197,7 +197,7 @@ export class UsersService extends DefaultService {
             password: false
           }
         },
-        relations: ['role', 'createdBy', 'updatedBy', 'deletedBy', 'category', 'paymentMethod', 'subcategories', 'subcategories.category'],
+        relations: ['role', 'createdBy', 'updatedBy', 'deletedBy', 'category', 'paymentMethod'],
         where: {
           deletedAt: IsNull(),
           name: params.query.name ? Like(`%${params.query.name}%`) : undefined,
