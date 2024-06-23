@@ -6,10 +6,11 @@ import { UsersModule } from './users/users.module';
 import { CategoriesModule } from 'src/categories/categories.module';
 import { PaymentMethodModule } from 'src/paymentMethod/paymentMethod.module';
 import { NotificationModule } from 'src/notification/notification.module';
+import { OrganizationModule } from './organization/organization.module';
 
 
 @Module({
-  imports: [UsersModule, AuthModule, CategoriesModule, PaymentMethodModule, NotificationModule],
+  imports: [UsersModule, AuthModule, CategoriesModule, PaymentMethodModule, NotificationModule, OrganizationModule],
   providers: [ApiService],
   controllers: [ApiController],
   exports: []

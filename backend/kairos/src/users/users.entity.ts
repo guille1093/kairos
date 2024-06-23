@@ -14,6 +14,7 @@ import {
 import { Category } from '../categories/entities/category.entity';
 import { PaymentMethod } from '../paymentMethod/entities/paymentMethod.entity';
 import { Role } from '../roles/roles.entity';
+import { Organization } from '../organization/entities/organization.entity';
 
 @Entity({ name: 'Users' })
 @Unique('Users_uk', ['username'])
@@ -147,6 +148,10 @@ export class User {
   @ManyToMany(() => PaymentMethod, (paymentMethod) => paymentMethod.users)
   @JoinTable()
   paymentMethod: PaymentMethod[];
+
+  @ManyToMany(() => Organization, (Organization) => Organization.users)
+  @JoinTable()
+  Organization: PaymentMethod[];
 
   @Column({ type: 'varchar', length: 350, nullable: true })
   availability: string;
