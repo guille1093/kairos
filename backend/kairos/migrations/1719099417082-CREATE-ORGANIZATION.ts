@@ -25,5 +25,4 @@ export class Migrations1719099417082 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE \`users_organization_organization\``);
         await queryRunner.query(`DROP TABLE \`Organization\``);
     }
-
 }

@@ -1,0 +1,543 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>kairos-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">kairos-api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#AppDataSource" title="config/typeorm.datasource.ts" ><b>AppDataSource</b>&nbsp;&nbsp;&nbsp;(config/.../typeorm.datasource.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Auth" title="src/app/defaults/default.controller.ts" ><b>Auth</b>&nbsp;&nbsp;&nbsp;(src/.../default.controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#configService" title="config/typeorm.datasource.ts" ><b>configService</b>&nbsp;&nbsp;&nbsp;(config/.../typeorm.datasource.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteFile" title="src/app/utils/filePersistor.ts" ><b>deleteFile</b>&nbsp;&nbsp;&nbsp;(src/.../filePersistor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPaths" title="src/app/utils/filePersistor.ts" ><b>getPaths</b>&nbsp;&nbsp;&nbsp;(src/.../filePersistor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IS_PUBLIC_KEY" title="src/roles/decorators/public.decorator.ts" ><b>IS_PUBLIC_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../public.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LOGGER" title="src/main.ts" ><b>LOGGER</b>&nbsp;&nbsp;&nbsp;(src/.../main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Public" title="src/roles/decorators/public.decorator.ts" ><b>Public</b>&nbsp;&nbsp;&nbsp;(src/.../public.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Roles" title="src/roles/decorators/roles.decorator.ts" ><b>Roles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROLES_KEY" title="src/roles/decorators/roles.decorator.ts" ><b>ROLES_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#saveFile" title="src/app/utils/filePersistor.ts" ><b>saveFile</b>&nbsp;&nbsp;&nbsp;(src/.../filePersistor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#saveFiles" title="src/app/utils/filePersistor.ts" ><b>saveFiles</b>&nbsp;&nbsp;&nbsp;(src/.../filePersistor.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>config/typeorm.datasource.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AppDataSource"></a>
+                    <span class="name">
+                        <span ><b>AppDataSource</b></span>
+                        <a href="#AppDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new DataSource({
+  type: &#x27;mysql&#x27;,
+  host: configService.get&lt;string&gt;(&#x27;DATABASE_HOST&#x27;),
+  port: configService.get&lt;number&gt;(&#x27;DATABASE_PORT&#x27;),
+  username: configService.get&lt;string&gt;(&#x27;DATABASE_USERNAME&#x27;),
+  password: configService.get&lt;string&gt;(&#x27;DATABASE_PASSWORD&#x27;),
+  database: configService.get&lt;string&gt;(&#x27;DATABASE_NAME&#x27;),
+  entities: [&#x27;src/**/*.entity.{ts,js}&#x27;],
+  migrations: [&#x27;./migrations/*.{ts,js}&#x27;],
+  migrationsTableName: &#x27;migrations&#x27;,
+  multipleStatements: true,
+  synchronize: true,
+  charset: &#x27;utf8mb4&#x27;,
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configService"></a>
+                    <span class="name">
+                        <span ><b>configService</b></span>
+                        <a href="#configService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ConfigService()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/defaults/default.controller.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Auth"></a>
+                    <span class="name">
+                        <span ><b>Auth</b></span>
+                        <a href="#Auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...roles: RoleEnum[]) &#x3D;&gt;
+  applyDecorators(
+    UseGuards(JwtAuthGuard),
+    Roles(...roles),
+    UseGuards(RolesGuard),
+  )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/utils/filePersistor.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteFile"></a>
+                    <span class="name">
+                        <span ><b>deleteFile</b></span>
+                        <a href="#deleteFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(file: Express.Multer.File) &#x3D;&gt; {
+  unlinkSync(&#x60;../files/${file.filename}&#x60;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaths"></a>
+                    <span class="name">
+                        <span ><b>getPaths</b></span>
+                        <a href="#getPaths"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(fileName: string) &#x3D;&gt; {
+  return &#x60;../files/${fileName}&#x60;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveFile"></a>
+                    <span class="name">
+                        <span ><b>saveFile</b></span>
+                        <a href="#saveFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(file: Express.Multer.File) &#x3D;&gt; {
+  // const fileExt &#x3D; file?.mimetype?.split(&#x27;/&#x27;)[1];
+  // extraer la extension del archivo del nombre original
+  const originalName &#x3D; file.originalname.split(&#x27;.&#x27;);
+  const fileExt &#x3D; originalName.at(-1);
+  const fileGen &#x3D; &#x60;${Date.now()}_${file.filename}.${fileExt}&#x60;;
+  file.filename &#x3D; fileGen;
+  copyFileSync(file.path, &#x60;./files/${fileGen}&#x60;);
+  unlinkSync(file.path);
+  return file;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveFiles"></a>
+                    <span class="name">
+                        <span ><b>saveFiles</b></span>
+                        <a href="#saveFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(files: Express.Multer.File[] | Express.Multer.File | null | {}) &#x3D;&gt; {
+  if (files) {
+    Object.values(files).forEach((fileOrFiles) &#x3D;&gt; {
+      if (Array.isArray(fileOrFiles)) {
+        fileOrFiles.forEach((file) &#x3D;&gt; saveFile(file));
+      } else if (fileOrFiles) {
+        saveFile(fileOrFiles);
+      }
+    });
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/roles/decorators/public.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IS_PUBLIC_KEY"></a>
+                    <span class="name">
+                        <span ><b>IS_PUBLIC_KEY</b></span>
+                        <a href="#IS_PUBLIC_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;isPublic&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Public"></a>
+                    <span class="name">
+                        <span ><b>Public</b></span>
+                        <a href="#Public"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; SetMetadata(IS_PUBLIC_KEY, true)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/main.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LOGGER"></a>
+                    <span class="name">
+                        <span ><b>LOGGER</b></span>
+                        <a href="#LOGGER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(&#x27;API&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/roles/decorators/roles.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Roles"></a>
+                    <span class="name">
+                        <span ><b>Roles</b></span>
+                        <a href="#Roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...roles: RoleEnum[]) &#x3D;&gt; SetMetadata(ROLES_KEY, roles)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES_KEY"></a>
+                    <span class="name">
+                        <span ><b>ROLES_KEY</b></span>
+                        <a href="#ROLES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;roles&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

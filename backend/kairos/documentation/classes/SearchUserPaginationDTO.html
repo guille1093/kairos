@@ -1,0 +1,1500 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>kairos-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">kairos-api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >SearchUserPaginationDTO</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/users/users.dto.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#category" >category</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#categoryID" >categoryID</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#createdByGuid" >createdByGuid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#document" >document</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#email" >email</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#guid" >guid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isActive" >isActive</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#isProfessional" >isProfessional</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#lastname" >lastname</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#mapAdress" >mapAdress</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#name" >name</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#offset" >offset</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#orderBy" >orderBy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#orderType" >orderType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#pageSize" >pageSize</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#paymentMethod" >paymentMethod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#phone" >phone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#roleGuid" >roleGuid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#updatedByGuid" >updatedByGuid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#username" >username</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="category"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>category</b></span>
+                        <a href="#category"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: false, type: &#x27;string&#x27;, default: &#x27;&#x27;})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="328" class="link-to-prism">src/users/users.dto.ts:328</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoryID"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>categoryID</b></span>
+                        <a href="#categoryID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: false, type: &#x27;string&#x27;, default: &#x27;&#x27;})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="333" class="link-to-prism">src/users/users.dto.ts:333</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createdByGuid"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>createdByGuid</b></span>
+                        <a href="#createdByGuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="300" class="link-to-prism">src/users/users.dto.ts:300</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>document</b></span>
+                        <a href="#document"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/users/users.dto.ts:286</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="email"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>email</b></span>
+                        <a href="#email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="271" class="link-to-prism">src/users/users.dto.ts:271</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guid"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>guid</b></span>
+                        <a href="#guid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="242" class="link-to-prism">src/users/users.dto.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isActive"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>isActive</b></span>
+                        <a href="#isActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;number&#x27;, required: false})<br />@IsOptional()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="290" class="link-to-prism">src/users/users.dto.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isProfessional"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>isProfessional</b></span>
+                        <a href="#isProfessional"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;number&#x27;, required: false})<br />@IsOptional()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="266" class="link-to-prism">src/users/users.dto.ts:266</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastname"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>lastname</b></span>
+                        <a href="#lastname"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="262" class="link-to-prism">src/users/users.dto.ts:262</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapAdress"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>mapAdress</b></span>
+                        <a href="#mapAdress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="276" class="link-to-prism">src/users/users.dto.ts:276</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="247" class="link-to-prism">src/users/users.dto.ts:247</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="offset"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>offset</b></span>
+                        <a href="#offset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: true, default: 0})<br />@IsOptional()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="309" class="link-to-prism">src/users/users.dto.ts:309</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderBy"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>orderBy</b></span>
+                        <a href="#orderBy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;name&quot; | &quot;lastname&quot; | &quot;username&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: false, type: &#x27;string&#x27;, default: &#x27;name&#x27;})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="318" class="link-to-prism">src/users/users.dto.ts:318</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderType"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>orderType</b></span>
+                        <a href="#orderType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: false, type: &#x27;string&#x27;, default: &#x27;ASC&#x27;})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="323" class="link-to-prism">src/users/users.dto.ts:323</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>pageSize</b></span>
+                        <a href="#pageSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: true, default: 10})<br />@IsOptional()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="313" class="link-to-prism">src/users/users.dto.ts:313</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paymentMethod"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>paymentMethod</b></span>
+                        <a href="#paymentMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="252" class="link-to-prism">src/users/users.dto.ts:252</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="phone"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>phone</b></span>
+                        <a href="#phone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="257" class="link-to-prism">src/users/users.dto.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roleGuid"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>roleGuid</b></span>
+                        <a href="#roleGuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../entitys/Role.html" target="_self" >RoleEnum | string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({required: false, enum: RoleEnum, type: &#x27;string&#x27;})<br />@IsOptional()<br />@IsEnum(RoleEnum, {each: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="295" class="link-to-prism">src/users/users.dto.ts:295</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatedByGuid"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>updatedByGuid</b></span>
+                        <a href="#updatedByGuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="305" class="link-to-prism">src/users/users.dto.ts:305</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="username"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>username</b></span>
+                        <a href="#username"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ApiProperty({type: &#x27;string&#x27;, required: false})<br />@IsOptional()<br />@IsString()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">src/users/users.dto.ts:281</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty, PartialType } from &#x27;@nestjs/swagger&#x27;;
+import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from &#x27;class-validator&#x27;;
+import { RoleEnum } from &#x27;src/roles/role.enum&#x27;;
+
+export class LoginDTO {
+  @ApiProperty({ required: true })
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsString()
+  username: string;
+
+  @ApiProperty({ required: true })
+  @MinLength(3)
+  @MaxLength(70)
+  @IsNotEmpty()
+  @IsString()
+  password: string;
+}
+
+export class googleOAuthDTO {
+  @ApiProperty({ required: true })
+  @IsNotEmpty()
+  @IsString()
+  googleID: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty()
+  @IsString()
+  email: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty()
+  @IsString()
+  name: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty()
+  @IsString()
+  lastname: string;
+}
+
+export class CreateUserDTO {
+  @ApiProperty({ required: true })
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsString()
+  username: string;
+
+  @ApiProperty({ required: true })
+  @MaxLength(10)
+  @MinLength(7)
+  @IsNotEmpty()
+  @IsString()
+  document: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsString()
+  @IsOptional()
+  phone: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsString()
+  @IsOptional()
+  birthdate: Date;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  @MaxLength(250)
+  profileImage: string;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  @MaxLength(250)
+  documentSideA: string;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  @MaxLength(250)
+  documentSideB: string;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  @MaxLength(250)
+  backgroundCheck: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsString()
+  @IsOptional()
+  backgroundCheckDate: Date;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsString()
+  @IsOptional()
+  backgroundCheckExpirationDate: Date;
+
+  @ApiProperty({ required: false })
+  @MaxLength(150)
+  @IsString()
+  @IsOptional()
+  mapAdress: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsOptional()
+  @IsString()
+  address: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsOptional()
+  @IsString()
+  @IsEmail()
+  email?: string;
+
+  @ApiProperty({ required: false })
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsOptional()
+  @IsString()
+  googleID?: string;
+
+  @ApiProperty({ required: true })
+  @MinLength(3)
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsString()
+  name: string;
+
+  @ApiProperty({ required: false })
+  @MinLength(3)
+  @MaxLength(50)
+  @IsNotEmpty()
+  @IsOptional()
+  @IsString()
+  lastname?: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  isActive?: number;
+
+  @ApiProperty({ type: &#x27;number&#x27; })
+  @IsOptional()
+  isProfessional?: number;
+
+  @ApiProperty({ required: false })
+  @MinLength(3)
+  @MaxLength(70)
+  @IsNotEmpty()
+  @IsString()
+  password: string;
+
+  @ApiProperty({ required: false, enum: RoleEnum, type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsNotEmpty()
+  @IsEnum(RoleEnum, { each: true })
+  roleGuid: RoleEnum | string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  category?: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  availability?: {};
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  description?: string;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  isAvailable?: number;
+
+  @ApiProperty({ required: false })
+  @IsOptional()
+  @IsString()
+  paymentMethods?: string;
+}
+
+export class UpdateUserDTO extends PartialType(CreateUserDTO) { }
+
+export class SearchUserDTO {
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  guid?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  username?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  document?: string;
+
+  @ApiProperty({ type: &#x27;number&#x27; })
+  @IsOptional()
+  isProfessional?: number;
+
+  @ApiProperty({ type: &#x27;number&#x27;, required: false })
+  @IsOptional()
+  isActive?: number;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  password?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  googleID?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  email?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsString()
+  category?: string;
+}
+
+export class SearchUserPaginationDTO {
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  guid?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  name?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  paymentMethod?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  phone?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  lastname?: string;
+
+  @ApiProperty({ type: &#x27;number&#x27;, required: false })
+  @IsOptional()
+  isProfessional?: number;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  email?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  mapAdress?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  username?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  document?: string;
+
+  @ApiProperty({ type: &#x27;number&#x27;, required: false })
+  @IsOptional()
+  isActive?: number;
+
+  @ApiProperty({ required: false, enum: RoleEnum, type: &#x27;string&#x27; })
+  @IsOptional()
+  @IsEnum(RoleEnum, { each: true })
+  roleGuid: RoleEnum | string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  createdByGuid?: string;
+
+  @ApiProperty({ type: &#x27;string&#x27;, required: false })
+  @IsOptional()
+  @IsString()
+  updatedByGuid?: string;
+
+  @ApiProperty({ required: true, default: 0 })
+  @IsOptional()
+  offset?: any;
+
+  @ApiProperty({ required: true, default: 10 })
+  @IsOptional()
+  pageSize?: any;
+
+  @ApiProperty({ required: false, type: &#x27;string&#x27;, default: &#x27;name&#x27; })
+  @IsOptional()
+  @IsString()
+  orderBy?: &#x27;name&#x27; | &#x27;lastname&#x27; | &#x27;username&#x27;;
+
+  @ApiProperty({ required: false, type: &#x27;string&#x27;, default: &#x27;ASC&#x27; })
+  @IsOptional()
+  @IsString()
+  orderType?: &#x27;ASC&#x27; | &#x27;DESC&#x27;;
+
+  @ApiProperty({ required: false, type: &#x27;string&#x27;, default: &#x27;&#x27; })
+  @IsOptional()
+  @IsString()
+  category?: string;
+
+  @ApiProperty({ required: false, type: &#x27;string&#x27;, default: &#x27;&#x27; })
+  @IsOptional()
+  @IsString()
+  categoryID?: string;
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchUserPaginationDTO.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,534 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>kairos-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">kairos-api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >Migrations1717483943918</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>migrations/1717483943918-CREATE-DB.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>MigrationInterface</code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#down" >down</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#up" >up</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Migrations1717483943918&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">migrations/1717483943918-CREATE-DB.ts:4</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="down"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>down</b></span>
+                        <a href="#down"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>down(queryRunner: QueryRunner)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">migrations/1717483943918-CREATE-DB.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="up"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>up</b></span>
+                        <a href="#up"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>up(queryRunner: QueryRunner)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="6"
+                                    class="link-to-prism">migrations/1717483943918-CREATE-DB.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MigrationInterface, QueryRunner } from &quot;typeorm&quot;;
+
+export class Migrations1717483943918 implements MigrationInterface {
+    name &#x3D; &#x27;Migrations1717483943918&#x27;
+
+    public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;Categories\&#x60; (\&#x60;guid\&#x60; varchar(36) NOT NULL, \&#x60;name\&#x60; varchar(50) NOT NULL, \&#x60;description\&#x60; varchar(250) NULL, \&#x60;isActive\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, \&#x60;image\&#x60; varchar(255) NOT NULL, \&#x60;createdAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), \&#x60;updatedAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), \&#x60;deletedAt\&#x60; timestamp NULL, \&#x60;createdByGuid\&#x60; varchar(36) NULL, \&#x60;updatedByGuid\&#x60; varchar(36) NULL, \&#x60;deletedByGuid\&#x60; varchar(36) NULL, PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;PaymentMethod\&#x60; (\&#x60;guid\&#x60; varchar(36) NOT NULL, \&#x60;name\&#x60; varchar(50) NOT NULL, \&#x60;isActive\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, \&#x60;createdAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), \&#x60;updatedAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), \&#x60;deletedAt\&#x60; timestamp NULL, \&#x60;createdByGuid\&#x60; varchar(36) NULL, \&#x60;updatedByGuid\&#x60; varchar(36) NULL, \&#x60;deletedByGuid\&#x60; varchar(36) NULL, PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;Roles\&#x60; (\&#x60;guid\&#x60; varchar(38) NOT NULL, \&#x60;role\&#x60; varchar(45) NOT NULL, \&#x60;description\&#x60; varchar(200) NULL, PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;Users\&#x60; (\&#x60;guid\&#x60; varchar(36) NOT NULL, \&#x60;document\&#x60; varchar(10) NULL, \&#x60;name\&#x60; varchar(50) NOT NULL, \&#x60;lastname\&#x60; varchar(50) NULL, \&#x60;email\&#x60; varchar(50) NOT NULL, \&#x60;address\&#x60; varchar(50) NULL, \&#x60;birthdate\&#x60; date NULL, \&#x60;profileImage\&#x60; varchar(255) NOT NULL, \&#x60;documentSideA\&#x60; varchar(255) NOT NULL, \&#x60;documentSideB\&#x60; varchar(255) NOT NULL, \&#x60;backgroundCheck\&#x60; varchar(255) NOT NULL, \&#x60;backgroundCheckDate\&#x60; date NULL, \&#x60;backgroundCheckExpirationDate\&#x60; date NULL, \&#x60;phone\&#x60; varchar(50) NULL, \&#x60;mapAdress\&#x60; varchar(150) NULL, \&#x60;username\&#x60; varchar(50) NOT NULL, \&#x60;googleID\&#x60; varchar(50) NULL, \&#x60;isActive\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, \&#x60;password\&#x60; varchar(250) NULL, \&#x60;createdAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), \&#x60;updatedAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), \&#x60;deletedAt\&#x60; timestamp NULL, \&#x60;availability\&#x60; varchar(350) NULL, \&#x60;description\&#x60; varchar(550) NULL, \&#x60;previusWorks\&#x60; varchar(3250) NULL, \&#x60;certifications\&#x60; varchar(3250) NULL, \&#x60;isAvailable\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, \&#x60;roleGuid\&#x60; varchar(38) NOT NULL, \&#x60;createdBy\&#x60; varchar(36) NULL, \&#x60;updatedBy\&#x60; varchar(36) NULL, UNIQUE INDEX \&#x60;IDX_cf5b6b34e888c0034e30210c86\&#x60; (\&#x60;document\&#x60;), UNIQUE INDEX \&#x60;IDX_3c3ab3f49a87e6ddb607f3c494\&#x60; (\&#x60;email\&#x60;), UNIQUE INDEX \&#x60;IDX_ffc81a3b97dcbf8e320d5106c0\&#x60; (\&#x60;username\&#x60;), UNIQUE INDEX \&#x60;Users_uk\&#x60; (\&#x60;username\&#x60;), PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;Notification\&#x60; (\&#x60;guid\&#x60; varchar(36) NOT NULL, \&#x60;title\&#x60; varchar(1500) NOT NULL, \&#x60;description\&#x60; varchar(1500) NOT NULL, \&#x60;link\&#x60; varchar(1500) NULL, \&#x60;isActive\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, \&#x60;createdAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), \&#x60;updatedAt\&#x60; timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), \&#x60;deletedAt\&#x60; timestamp NULL, \&#x60;createdByGuid\&#x60; varchar(36) NULL, \&#x60;updatedByGuid\&#x60; varchar(36) NULL, \&#x60;deletedByGuid\&#x60; varchar(36) NULL, \&#x60;notificationTypeGuid\&#x60; varchar(36) NULL, PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;NotificationType\&#x60; (\&#x60;guid\&#x60; varchar(36) NOT NULL, \&#x60;name\&#x60; varchar(1500) NOT NULL, \&#x60;description\&#x60; varchar(1500) NOT NULL, \&#x60;isActive\&#x60; tinyint NOT NULL DEFAULT &#x27;1&#x27;, PRIMARY KEY (\&#x60;guid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;users_category_categories\&#x60; (\&#x60;usersGuid\&#x60; varchar(36) NOT NULL, \&#x60;categoriesGuid\&#x60; varchar(36) NOT NULL, INDEX \&#x60;IDX_6a9fb5a4565856faa6d5ff4b7c\&#x60; (\&#x60;usersGuid\&#x60;), INDEX \&#x60;IDX_7b278a9b9b557617ba0f6a47cf\&#x60; (\&#x60;categoriesGuid\&#x60;), PRIMARY KEY (\&#x60;usersGuid\&#x60;, \&#x60;categoriesGuid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE \&#x60;users_payment_method_payment_method\&#x60; (\&#x60;usersGuid\&#x60; varchar(36) NOT NULL, \&#x60;paymentMethodGuid\&#x60; varchar(36) NOT NULL, INDEX \&#x60;IDX_81677030e50ff65528fc99fb52\&#x60; (\&#x60;usersGuid\&#x60;), INDEX \&#x60;IDX_a91581a3fd7391a8cf3365eeb2\&#x60; (\&#x60;paymentMethodGuid\&#x60;), PRIMARY KEY (\&#x60;usersGuid\&#x60;, \&#x60;paymentMethodGuid\&#x60;)) ENGINE&#x3D;InnoDB&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; ADD CONSTRAINT \&#x60;FK_9445d5029daaaa497314020dc07\&#x60; FOREIGN KEY (\&#x60;createdByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; ADD CONSTRAINT \&#x60;FK_bf150ad20e2247a284531879c5c\&#x60; FOREIGN KEY (\&#x60;updatedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; ADD CONSTRAINT \&#x60;FK_cb4e5a10deb23947949fc174622\&#x60; FOREIGN KEY (\&#x60;deletedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; ADD CONSTRAINT \&#x60;FK_987b13be02d806c5b5e51a52973\&#x60; FOREIGN KEY (\&#x60;createdByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; ADD CONSTRAINT \&#x60;FK_f5c6f6a2dba918e75a6665d0155\&#x60; FOREIGN KEY (\&#x60;updatedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; ADD CONSTRAINT \&#x60;FK_493e13c49d6cab80534c41f9998\&#x60; FOREIGN KEY (\&#x60;deletedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; ADD CONSTRAINT \&#x60;Users_Roles_fk\&#x60; FOREIGN KEY (\&#x60;roleGuid\&#x60;) REFERENCES \&#x60;Roles\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; ADD CONSTRAINT \&#x60;Users_fk_1\&#x60; FOREIGN KEY (\&#x60;createdBy\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; ADD CONSTRAINT \&#x60;Users_fk_2\&#x60; FOREIGN KEY (\&#x60;updatedBy\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; ADD CONSTRAINT \&#x60;Users_fk_3\&#x60; FOREIGN KEY (\&#x60;updatedBy\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; ADD CONSTRAINT \&#x60;FK_ec3c3eb88be4e33e9b8fbd92a60\&#x60; FOREIGN KEY (\&#x60;createdByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; ADD CONSTRAINT \&#x60;FK_f31ce3e1cbb249ea65703b4d042\&#x60; FOREIGN KEY (\&#x60;updatedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; ADD CONSTRAINT \&#x60;FK_5bece5781eec0da0fd62ddd748f\&#x60; FOREIGN KEY (\&#x60;deletedByGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; ADD CONSTRAINT \&#x60;FK_125b2ca9e00b617ffede78e155a\&#x60; FOREIGN KEY (\&#x60;notificationTypeGuid\&#x60;) REFERENCES \&#x60;NotificationType\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_category_categories\&#x60; ADD CONSTRAINT \&#x60;FK_6a9fb5a4565856faa6d5ff4b7ce\&#x60; FOREIGN KEY (\&#x60;usersGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_category_categories\&#x60; ADD CONSTRAINT \&#x60;FK_7b278a9b9b557617ba0f6a47cf2\&#x60; FOREIGN KEY (\&#x60;categoriesGuid\&#x60;) REFERENCES \&#x60;Categories\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_payment_method_payment_method\&#x60; ADD CONSTRAINT \&#x60;FK_81677030e50ff65528fc99fb529\&#x60; FOREIGN KEY (\&#x60;usersGuid\&#x60;) REFERENCES \&#x60;Users\&#x60;(\&#x60;guid\&#x60;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_payment_method_payment_method\&#x60; ADD CONSTRAINT \&#x60;FK_a91581a3fd7391a8cf3365eeb25\&#x60; FOREIGN KEY (\&#x60;paymentMethodGuid\&#x60;) REFERENCES \&#x60;PaymentMethod\&#x60;(\&#x60;guid\&#x60;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+    }
+
+    public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_payment_method_payment_method\&#x60; DROP FOREIGN KEY \&#x60;FK_a91581a3fd7391a8cf3365eeb25\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_payment_method_payment_method\&#x60; DROP FOREIGN KEY \&#x60;FK_81677030e50ff65528fc99fb529\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_category_categories\&#x60; DROP FOREIGN KEY \&#x60;FK_7b278a9b9b557617ba0f6a47cf2\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;users_category_categories\&#x60; DROP FOREIGN KEY \&#x60;FK_6a9fb5a4565856faa6d5ff4b7ce\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; DROP FOREIGN KEY \&#x60;FK_125b2ca9e00b617ffede78e155a\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; DROP FOREIGN KEY \&#x60;FK_5bece5781eec0da0fd62ddd748f\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; DROP FOREIGN KEY \&#x60;FK_f31ce3e1cbb249ea65703b4d042\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Notification\&#x60; DROP FOREIGN KEY \&#x60;FK_ec3c3eb88be4e33e9b8fbd92a60\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; DROP FOREIGN KEY \&#x60;Users_fk_3\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; DROP FOREIGN KEY \&#x60;Users_fk_2\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; DROP FOREIGN KEY \&#x60;Users_fk_1\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Users\&#x60; DROP FOREIGN KEY \&#x60;Users_Roles_fk\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; DROP FOREIGN KEY \&#x60;FK_493e13c49d6cab80534c41f9998\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; DROP FOREIGN KEY \&#x60;FK_f5c6f6a2dba918e75a6665d0155\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;PaymentMethod\&#x60; DROP FOREIGN KEY \&#x60;FK_987b13be02d806c5b5e51a52973\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; DROP FOREIGN KEY \&#x60;FK_cb4e5a10deb23947949fc174622\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; DROP FOREIGN KEY \&#x60;FK_bf150ad20e2247a284531879c5c\&#x60;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE \&#x60;Categories\&#x60; DROP FOREIGN KEY \&#x60;FK_9445d5029daaaa497314020dc07\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_a91581a3fd7391a8cf3365eeb2\&#x60; ON \&#x60;users_payment_method_payment_method\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_81677030e50ff65528fc99fb52\&#x60; ON \&#x60;users_payment_method_payment_method\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;users_payment_method_payment_method\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_7b278a9b9b557617ba0f6a47cf\&#x60; ON \&#x60;users_category_categories\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_6a9fb5a4565856faa6d5ff4b7c\&#x60; ON \&#x60;users_category_categories\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;users_category_categories\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;NotificationType\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;Notification\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;Users_uk\&#x60; ON \&#x60;Users\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_ffc81a3b97dcbf8e320d5106c0\&#x60; ON \&#x60;Users\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_3c3ab3f49a87e6ddb607f3c494\&#x60; ON \&#x60;Users\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX \&#x60;IDX_cf5b6b34e888c0034e30210c86\&#x60; ON \&#x60;Users\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;Users\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;Roles\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;PaymentMethod\&#x60;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE \&#x60;Categories\&#x60;&#x60;);
+    }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Migrations1717483943918.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
