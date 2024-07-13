@@ -1,15 +1,14 @@
 export type Product = {
-  id: number;
+  guid: string;
   name: string;
   description?: string;
-  price: number;
 };
 
-type NewProduct = Omit<Product, "id">;
+type NewProduct = Omit<Product, "guid">;
 
 export const createProduct = async (product: NewProduct) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization`,
     {
       method: "POST",
       headers: {
@@ -27,27 +26,30 @@ export const createProduct = async (product: NewProduct) => {
     throw new Error("Failed to create product");
   }
 
-  return response.json();
+  const data = await response.json();
+  console.log(data);
+
+  return data.data;
 };
 
 export const getProducts = async (): Promise<Product[]> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization?offset=0&pageSize=10`,
     {
       cache: "no-cache",
     }
   );
-
+  const data = await response.json();
   if (!response.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch organizations");
   }
 
-  return response.json();
+  return data.data.results;
 };
 
-export const getProduct = async (id: number): Promise<Product> => {
+export const getProduct = async (id: string): Promise<Product> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products/${id}`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization/${id}`,
     {
       cache: "no-cache",
     }
@@ -57,15 +59,17 @@ export const getProduct = async (id: number): Promise<Product> => {
     throw new Error("Failed to fetch product");
   }
 
-  return response.json();
+  const data = await response.json();
+
+  return data.data;
 };
 
 export const updateProduct = async (
-  id: number,
+  id: string,
   product: Partial<Product>
 ): Promise<Product> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products/${id}`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization/${id}`,
     {
       method: "PATCH",
       headers: {
@@ -82,9 +86,9 @@ export const updateProduct = async (
   return response.json();
 };
 
-export const deleteProduct = async (id: number) => {
+export const deleteProduct = async (id: string) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products/${id}`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization/${id}`,
     {
       method: "DELETE",
     }

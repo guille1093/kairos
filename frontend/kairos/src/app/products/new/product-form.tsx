@@ -12,9 +12,6 @@ const productSchema = z.object({
     message: "Name must be at least 3 characters long",
   }),
   description: z.string().optional(),
-  price: z.coerce.number().min(0.01, {
-    message: "Price must be at least 0.01",
-  }),
 });
 
 type ProductForm = z.infer<typeof productSchema>;
@@ -34,7 +31,6 @@ export function ProductForm({
     defaultValues: {
       name: foundProduct?.name ?? "",
       description: foundProduct?.description ?? "",
-      price: foundProduct?.price ?? 0,
     },
   });
 
@@ -43,7 +39,7 @@ export function ProductForm({
   const onSubmit = handleSubmit(async (data) => {
     try {
       const newProduct = await createProduct(data);
-      toast.success(`Product ${newProduct.name} created`);
+      toast.success(`Organization ${newProduct.name} created`);
       reset();
     } catch (error) {
       if (error instanceof Error) {
@@ -71,18 +67,6 @@ export function ProductForm({
         className="border border-gray-800 bg-gray-950 rounded-md w-full p-2"
         {...register("description")}
       />
-
-      <label htmlFor="price">Price</label>
-
-      <input
-        type="number"
-        id="price"
-        className="border border-gray-800 bg-gray-950 rounded-md w-full p-2"
-        {...register("price")}
-      />
-      {errors.price?.message && (
-        <p className="text-red-500">{errors.price.message.toString()}</p>
-      )}
       <div className="flex gap-x-2">
         <button
           type="submit"
@@ -97,7 +81,7 @@ export function ProductForm({
                 window.confirm("Are you sure you want to delete this product?")
               ) {
                 try {
-                  await deleteProduct(foundProduct.id);
+                  await deleteProduct(foundProduct.guid);
 
                   router.push("/products");
                   router.refresh();

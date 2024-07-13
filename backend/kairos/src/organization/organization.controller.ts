@@ -20,7 +20,7 @@ export class OrganizationController extends DefaultController {
   }
 
   @Get()
-  @Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
+  //@Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Get all Organization' })
   @ApiResponse({ type: ResposeSuccessPaginationDTO, status: HttpStatus.OK })
@@ -43,7 +43,7 @@ export class OrganizationController extends DefaultController {
   }
 
   @Get(':guid')
-  @Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
+  //@Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Get one Organization by guid' })
   @ApiResponse({ type: ResposeSuccessDataDTO, status: HttpStatus.OK })
@@ -67,7 +67,7 @@ export class OrganizationController extends DefaultController {
   }
 
   @Post()
-  @Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
+  //@Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: 'Create Organization' })
   @ApiResponse({ type: ResposeSuccessDataDTO, status: HttpStatus.CREATED })
@@ -76,7 +76,7 @@ export class OrganizationController extends DefaultController {
     try {
       const Organization: Organization = await this.OrganizationService.create({
         body: body,
-        createdByGUID: request.user.guid
+        createdByGUID: null
       });
       return { status: 'success', data: Organization };
     } catch (error) {
@@ -92,7 +92,7 @@ export class OrganizationController extends DefaultController {
   }
 
   @Patch(':guid')
-  @Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
+  //@Auth(RoleEnum.Super, RoleEnum.ServiceProvier, RoleEnum.Client, RoleEnum.Moderator)
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Update Organization' })
   @ApiResponse({ type: ResposeSuccessDataDTO, status: HttpStatus.OK })

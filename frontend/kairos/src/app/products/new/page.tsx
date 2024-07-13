@@ -13,7 +13,7 @@ export default async function ProductNewPage({
 
   if (params.id) {
     try {
-      foundProduct = await getProduct(Number(params.id));
+      foundProduct = await getProduct(params.id);
     } catch (error) {
       redirect("/products");
     }
