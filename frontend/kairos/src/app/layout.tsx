@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
+const ibmPlexSans = IBM_Plex_Sans({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "KAIROS",
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={inter.className}>
+      <body suppressHydrationWarning={true} className={ibmPlexSans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

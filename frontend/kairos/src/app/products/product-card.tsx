@@ -1,9 +1,9 @@
 "use client";
 
-import { Product } from "./products.api";
+import { Organization } from "./products.api";
 import { useRouter } from "next/navigation";
 
-export function ProductCard(product: Product) {
+export function ProductCard(product: Organization) {
   const router = useRouter();
 
   return (

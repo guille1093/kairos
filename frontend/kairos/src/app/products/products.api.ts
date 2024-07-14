@@ -1,10 +1,10 @@
-export type Product = {
+export type Organization = {
   guid: string;
   name: string;
   description?: string;
 };
 
-type NewProduct = Omit<Product, "guid">;
+type NewProduct = Omit<Organization, "guid">;
 
 export const createProduct = async (product: NewProduct) => {
   const response = await fetch(
@@ -32,7 +32,7 @@ export const createProduct = async (product: NewProduct) => {
   return data.data;
 };
 
-export const getProducts = async (): Promise<Product[]> => {
+export const getProducts = async (): Promise<Organization[]> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization?offset=0&pageSize=10`,
     {
@@ -47,7 +47,7 @@ export const getProducts = async (): Promise<Product[]> => {
   return data.data.results;
 };
 
-export const getProduct = async (id: string): Promise<Product> => {
+export const getProduct = async (id: string): Promise<Organization> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization/${id}`,
     {
@@ -66,8 +66,8 @@ export const getProduct = async (id: string): Promise<Product> => {
 
 export const updateProduct = async (
   id: string,
-  product: Partial<Product>
-): Promise<Product> => {
+  product: Partial<Organization>
+): Promise<Organization> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/organization/${id}`,
     {

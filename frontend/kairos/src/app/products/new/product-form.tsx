@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Product, createProduct, deleteProduct } from "../products.api";
+import { Organization, createProduct, deleteProduct } from "../products.api";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -19,7 +19,7 @@ type ProductForm = z.infer<typeof productSchema>;
 export function ProductForm({
   foundProduct,
 }: {
-  foundProduct: Product | null;
+  foundProduct: Organization | null;
 }) {
   const {
     register,
