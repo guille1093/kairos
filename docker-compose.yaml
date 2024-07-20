@@ -1,0 +1,56 @@
+services:
+  # kairos-db:
+  #   image: mysql
+  #   container_name: db
+  #   env_file:
+  #     - .env
+  #   # command: --default-authentication-plugin=caching_sha2_password --init-file /docker-entrypoint-initdb.d/init.sql
+  #   restart: always
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+  #   volumes:
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  kairos-adminer:
+    image: adminer
+    container_name: kairos-adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  # web:
+  #   image: fma-brokers:latest
+  #   container_name: fma-brokers-php
+  #   build:
+  #     target: web
+  #     context: .
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "8000:80"
+  #   volumes:
+  #     - .:/var/www/html
+  #   depends_on:
+  #     - db
+
+  kairos-db:
+    platform: "linux/amd64"
+    container_name: kairos-db
+    restart: alway
+    image: mysql:9
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  dbdata:
