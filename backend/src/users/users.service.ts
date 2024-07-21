@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { ResposeResultsPaginationDTO } from 'src/app/api.dto';
 import { DefaultService } from 'src/app/defaults/defatul.service';
 import { RoleEnum } from 'src/roles/role.enum';

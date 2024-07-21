@@ -14,6 +14,7 @@ services:
   #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   kairos-adminer:
+    platform: "linux/amd64"
     image: adminer
     container_name: kairos-adminer
     restart: always
@@ -21,6 +22,7 @@ services:
       - 8080:8080
 
   kairos-frontend:
+    platform: "linux/amd64"
     image: kairos-frontend:latest
     container_name: kairos-frontend
     build:
@@ -29,11 +31,47 @@ services:
     env_file:
       - .env
     environment:
-      NEXT_PUBLIC_BACKEND_URL: http://localhost:3000
+      NEXT_PUBLIC_BACKEND_URL: http://kairos-backend:3000
     ports:
       - "3003:3000"
-    # depends_on:
-    #   - db
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - kairos-backend
+
+  kairos-backend:
+    platform: "linux/amd64"
+    image: kairos-backend:latest
+    container_name: kairos-backend
+    build:
+      target: kairos-backend
+      context: ./backend
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      TZ: ${TZ}
+      DATABASE_HOST: kairos-db
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      DATABASE_PORT: ${DATABASE_PORT}
+      BASEPATH: ${BASEPATH}
+      BASE_URL: ${BASE_URL}
+      PORT: 3000
+      DESCRIPTION: ${DESCRIPTION}
+      SWAGGER_DOCS: ${SWAGGER_DOCS}
+      API_KEY: ${API_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRE_IN: ${JWT_EXPIRE_IN}
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./backend:/app
+    # - /app/node_modules
+    depends_on:
+      - kairos-db
 
   kairos-db:
     platform: "linux/amd64"

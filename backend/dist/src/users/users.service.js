@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const defatul_service_1 = require("../app/defaults/defatul.service");
 const role_enum_1 = require("../roles/role.enum");
 const roles_entity_1 = require("../roles/roles.entity");

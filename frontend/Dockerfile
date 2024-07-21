@@ -17,7 +17,7 @@ RUN npm run build
 # Run the app
 FROM base AS kairos-frontend
 WORKDIR /app
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs --ingroup nodejs
 COPY --from=builder /app/public ./public
@@ -28,4 +28,5 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
-CMD HOSTNAME="0.0.0.0" node server.js
+# CMD HOSTNAME="0.0.0.0" node server.js
+CMD npm run dev

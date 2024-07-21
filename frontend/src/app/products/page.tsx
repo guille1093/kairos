@@ -30,7 +30,10 @@ export default async function ProductsPage() {
     <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
       <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
         {products.map((product) => (
-          <Link href={`/products/${product.guid}`}>
+          <Link
+            key={`/products/${product.guid}`}
+            href={`/products/${product.guid}`}
+          >
             <Card x-chunk={product.guid}>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">

@@ -40,7 +40,7 @@ async function bootstrap() {
   let configCORS = { origin: ['*'], methods: 'GET,PUT,PATCH,POST,DELETE,OPTIONS' };
   switch (process.env.NODE_ENV) {
     case 'development':
-      configCORS.origin = ['http://localhost:3001', config.get<string>('FRONT_URL')];
+      configCORS.origin = ['http://0.0.0.0:3003', config.get<string>('FRONT_URL')];
       break;
     case 'production':
       configCORS.origin = [config.get<string>('FRONT_URL')];

@@ -6,6 +6,8 @@ CREATE USER 'kairos'@'%' IDENTIFIED BY 'kairos';
 GRANT ALL PRIVILEGES ON *.* TO 'kairos'@'%';
 FLUSH PRIVILEGES;
 
+USE kairos;
+
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
