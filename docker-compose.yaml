@@ -20,37 +20,37 @@ services:
     ports:
       - 8080:8080
 
-  # web:
-  #   image: fma-brokers:latest
-  #   container_name: fma-brokers-php
-  #   build:
-  #     target: web
-  #     context: .
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - "8000:80"
-  #   volumes:
-  #     - .:/var/www/html
-  #   depends_on:
-  #     - db
+  kairos-frontend:
+    image: kairos-frontend:latest
+    container_name: kairos-frontend
+    build:
+      target: kairos-frontend
+      context: ./frontend
+    env_file:
+      - .env
+    environment:
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:3000
+    ports:
+      - "3003:3000"
+    # depends_on:
+    #   - db
 
   kairos-db:
     platform: "linux/amd64"
     container_name: kairos-db
-    restart: alway
-    image: mysql:9
+    restart: always
+    image: mysql:9.0.0
     env_file:
       - .env
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      # MYSQL_DATABASE: ${DATABASE_NAME}
+      # MYSQL_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
       - ./database:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - .init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   dbdata:
