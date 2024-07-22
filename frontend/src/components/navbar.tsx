@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import {
+  CircleUser,
+  Menu,
+  Package2,
+  Search,
+  HopOff,
+  Origami,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/darkmode";
 import {
@@ -18,41 +25,41 @@ export function Navbar() {
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
-          href="#"
+          href="/"
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <Origami strokeWidth={1} />
+          <span className="sr-only">KAIROS</span>
         </Link>
         <Link
-          href="#"
+          href="/"
           className="text-foreground transition-colors hover:text-foreground"
         >
-          Dashboard
+          Inicio
+        </Link>
+        <Link
+          href="organizations"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Organizaciones
         </Link>
         <Link
           href="#"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Orders
+          Proyectos
         </Link>
         <Link
           href="#"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Products
+          Tareas
         </Link>
         <Link
           href="#"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Customers
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Analytics
+          Rendimiento
         </Link>
       </nav>
       <Sheet>
@@ -68,35 +75,35 @@ export function Navbar() {
               href="#"
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Package2 className="h-6 w-6" />
-              <span className="sr-only">Acme Inc</span>
+              <Origami strokeWidth={1} />
+              <span className="sr-only">Kairos</span>
             </Link>
-            <Link href="#" className="hover:text-foreground">
-              Dashboard
+            <Link href="/" className="hover:text-foreground">
+              Inicio
+            </Link>
+            <Link
+              href="organizations"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              Organizaciones
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground"
             >
-              Orders
+              Proyectos
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground"
             >
-              Products
+              Tareas
             </Link>
             <Link
               href="#"
               className="text-muted-foreground hover:text-foreground"
             >
-              Customers
-            </Link>
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Analytics
+              Rendimiento
             </Link>
           </nav>
         </SheetContent>
@@ -107,15 +114,16 @@ export function Navbar() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search products..."
+              placeholder="Buscar..."
               className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
             />
           </div>
         </form>
+        <ModeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="secondary" size="icon" className="rounded-full">
-              <CircleUser className="h-5 w-5" />
+            <Button variant="outline" size="icon">
+              <CircleUser strokeWidth={1} className="h-5 w-5" />
               <span className="sr-only">Toggle user menu</span>
             </Button>
           </DropdownMenuTrigger>
@@ -128,7 +136,6 @@ export function Navbar() {
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <ModeToggle />
       </div>
     </header>
   );
