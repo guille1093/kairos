@@ -1,54 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Origami } from "lucide-react";
+import { FormEventHandler, useState } from "react";
+import { signIn } from "@/auth";
 
 export default function Login() {
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
-          <div className="grid gap-2 text-center">
-            <h1 className="text-5xl font-bold">Kairós</h1>
+          <div className="grid gap-2">
+            <div className="flex flex-row justify-center">
+              <Origami strokeWidth={1} className="h-12 w-12" />
+              <h1 className="text-5xl font-bold">Kairós</h1>
+            </div>
             <p className="text-balance text-muted-foreground">
-              Enter your email below to login to your account
+              Ingrese su correo y contraseña para acceder a su cuenta.
             </p>
           </div>
-          <div className="grid gap-4">
+          <form
+            action={async (formData) => {
+              "use server";
+              await signIn("credentials", formData);
+            }}
+            className="grid gap-4"
+          >
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
+              <Label htmlFor="username">Email</Label>
+              <Input name="username" type="text" placeholder="Email" required />
             </div>
             <div className="grid gap-2">
               <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Contraseña</Label>
                 <Link
                   href="/forgot-password"
                   className="ml-auto inline-block text-sm underline"
                 >
-                  Forgot your password?
+                  Olvidé mi contraseña
                 </Link>
               </div>
-              <Input id="password" type="password" required />
+              <Input
+                name="password"
+                type="password"
+                placeholder="Contraseña"
+                required
+              />
             </div>
             <Button type="submit" className="w-full">
-              Login
+              Iniciar sesión
             </Button>
             <Button variant="outline" className="w-full">
-              Login with Google
+              Continuar con Google
             </Button>
-          </div>
+          </form>
           <div className="mt-4 text-center text-sm">
-            Don&apos;t have an account?{" "}
-            <Link href="#" className="underline">
-              Sign up
+            <span>¿No tienes una cuenta? </span>
+            <Link href="#" className="underline font-bold">
+              Regístrate
             </Link>
           </div>
         </div>

@@ -36,6 +36,7 @@ let ApiController = exports.ApiController = ApiController_1 = class ApiControlle
                 password: body.password
             });
             const token = await this.authService.generateAccessToken({ user });
+            console.log(token);
             return { status: 'success', data: token };
         }
         catch (error) {
