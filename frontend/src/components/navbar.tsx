@@ -24,7 +24,6 @@ import Image from "next/image";
 
 export async function Navbar() {
   const session = await auth();
-  console.log(session);
   if (!session?.user) return <div></div>;
   return (
     <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">

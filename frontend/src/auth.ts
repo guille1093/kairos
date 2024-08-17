@@ -1,5 +1,5 @@
-import NextAuth from "next-auth"
-import Credentials from "next-auth/providers/credentials"
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 import { toast } from "sonner";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -22,9 +22,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     body: JSON.stringify(credentials),
                 });
 
-                const data = await res.json();
+                const response = await res.json();
 
-                user = data.data.user;
+                user = response.data.user;
+                user.token = response.data.token;
 
                 if (!user) {
                     // No user found, so this is their first attempt to login
@@ -33,7 +34,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 }
 
                 user.image = `http://172.19.0.4:3002/files/${user.profileImage}`;
-
                 // return user object with the their profile data
                 return user
             },
@@ -42,21 +42,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     session: {
         strategy: 'jwt',
     },
-    jwt: {
-        secret: process.env.JWT_SECRET,
-    },
-    callbacks: {
-        async jwt(token, user) {
-            if (user) {
-                token.accessToken = user.token;
-                token.user = user;
-            }
-            return token;
-        },
-        async session(session, token) {
-            session.accessToken = token.accessToken;
-            session.user = token.user;
-            return session;
-        },
-    },
+    // callbacks: {
+    //     jwt({ token, user }) {
+    //       if (user) { // User is available during sign-in
+    //         console.log("usercallnba: ",user);
+    //         token.id = user.id
+    //       }
+    //       return token
+    //     },
+    //     session({ session, token }) {
+    //       session.user.id = token.id as string;
+    //       return session
+    //     },
+    //   },
 })

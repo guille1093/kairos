@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Origami } from "lucide-react";
 import { FormEventHandler, useState } from "react";
 import { signIn } from "@/auth";
+import { AuthError } from "next-auth";
 
 export default function Login() {
   return (
@@ -16,15 +17,20 @@ export default function Login() {
             <div className="flex flex-row justify-center">
               <Origami strokeWidth={1} className="h-12 w-12" />
               <h1 className="text-5xl font-bold">Kairós</h1>
+
             </div>
-            <p className="text-balance text-muted-foreground">
-              Ingrese su correo y contraseña para acceder a su cuenta.
-            </p>
+            <h2 className="text-center">Iniciar sesión</h2>
           </div>
           <form
             action={async (formData) => {
               "use server";
-              await signIn("credentials", formData);
+                    try {
+                      await signIn("credentials", {username: formData.get("username"), password: formData.get("password"), redirect: true, redirectTo: "/home"})
+                   } catch(error) {
+                     if (error instanceof AuthError)
+                     console.log(error) // Handle auth errors
+                     throw error // Rethrow all other errors
+                   }
             }}
             className="grid gap-4"
           >
